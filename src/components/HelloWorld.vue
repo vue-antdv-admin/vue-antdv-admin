@@ -14,7 +14,7 @@ export default {
   props: {
     msg: String,
   },
-  setup() {
+  setup(props, ctx) {
     const count = ref(0);
     return { count };
   },
