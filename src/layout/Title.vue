@@ -7,9 +7,7 @@
  * @author zhushiqi
  */
 
-import { defineComponent, ref } from 'vue';
-
-interface IProps {}
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Title',

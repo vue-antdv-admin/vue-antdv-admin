@@ -5,7 +5,9 @@ import App from '/@/App.vue';
 import { router } from '/@/router/index';
 import './index.scss';
 
-// todo
+// TODO: 无法读取环境变量
+console.log(import.meta.env);
+
 createApp(App)
   .use(router)
   .use(Antd)

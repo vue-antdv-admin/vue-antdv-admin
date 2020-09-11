@@ -15,7 +15,7 @@ const routes: Array<RouteConfig> = [
     path: '/menu1',
     component: () => import('/@/layout/Layout.vue'),
     meta: {
-      title: 'Menu 1'
+      title: 'Menu 1',
     },
     children: [
       {
@@ -23,7 +23,7 @@ const routes: Array<RouteConfig> = [
         path: 'submenu1',
         component: () => import('/@/layout/View.vue'),
         meta: {
-          title: 'SubMenu 1'
+          title: 'SubMenu 1',
         },
         children: [
           {
@@ -31,12 +31,12 @@ const routes: Array<RouteConfig> = [
             path: 'option1',
             props(route) {
               return {
-                Title: route.name
-              }
+                Title: route.name,
+              };
             },
             component: () => import('/@/layout/Title.vue'),
             meta: {
-              title: 'Option 1'
+              title: 'Option 1',
             },
           },
           {
@@ -44,15 +44,15 @@ const routes: Array<RouteConfig> = [
             path: 'option2',
             props(route) {
               return {
-                Title: route.name
-              }
+                Title: route.name,
+              };
             },
             component: () => import('/@/layout/Title.vue'),
             meta: {
-              title: 'Option 2'
+              title: 'Option 2',
             },
-          }
-        ]
+          },
+        ],
       },
       {
         name: 'SubMenu 2',
@@ -68,12 +68,12 @@ const routes: Array<RouteConfig> = [
             path: 'option3',
             props(route) {
               return {
-                Title: route.name
-              }
+                Title: route.name,
+              };
             },
             component: () => import('/@/layout/Title.vue'),
             meta: {
-              title: 'Option 3'
+              title: 'Option 3',
             },
           },
           {
@@ -81,24 +81,24 @@ const routes: Array<RouteConfig> = [
             path: 'option4',
             props(route) {
               return {
-                Title: route.name
-              }
+                Title: route.name,
+              };
             },
             component: () => import('/@/layout/Title.vue'),
             meta: {
-              title: 'Option 4'
+              title: 'Option 4',
             },
-          }
-        ]
-      }
-    ]
+          },
+        ],
+      },
+    ],
   },
   {
     name: 'Menu 2',
     path: '/menu2',
     component: () => import('/@/layout/Layout.vue'),
     meta: {
-      title: 'Menu 2'
+      title: 'Menu 2',
     },
     children: [
       {
@@ -106,7 +106,7 @@ const routes: Array<RouteConfig> = [
         path: 'submenu3',
         component: () => import('/@/layout/View.vue'),
         meta: {
-          title: 'SubMenu 3'
+          title: 'SubMenu 3',
         },
         children: [
           {
@@ -114,12 +114,12 @@ const routes: Array<RouteConfig> = [
             path: 'option5',
             props(route) {
               return {
-                Title: route.name
-              }
+                Title: route.name,
+              };
             },
             component: () => import('/@/layout/Title.vue'),
             meta: {
-              title: 'Option 5'
+              title: 'Option 5',
             },
           },
           {
@@ -127,12 +127,12 @@ const routes: Array<RouteConfig> = [
             path: 'option6',
             props(route) {
               return {
-                Title: route.name
-              }
+                Title: route.name,
+              };
             },
             component: () => import('/@/layout/Title.vue'),
             meta: {
-              title: 'Option 6'
+              title: 'Option 6',
             },
           },
           {
@@ -140,15 +140,15 @@ const routes: Array<RouteConfig> = [
             path: 'option7',
             props(route) {
               return {
-                Title: route.name
-              }
+                Title: route.name,
+              };
             },
             component: () => import('/@/layout/Title.vue'),
             meta: {
-              title: 'Option 7'
+              title: 'Option 7',
             },
-          }
-        ]
+          },
+        ],
       },
     ],
   },
@@ -157,7 +157,7 @@ const routes: Array<RouteConfig> = [
     path: '/menu3',
     component: () => import('/@/layout/Layout.vue'),
     meta: {
-      title: 'Menu 3'
+      title: 'Menu 3',
     },
     children: [
       {
@@ -165,12 +165,12 @@ const routes: Array<RouteConfig> = [
         path: 'option8',
         props(route) {
           return {
-            Title: route.name
-          }
+            Title: route.name,
+          };
         },
         component: () => import('/@/layout/Title.vue'),
         meta: {
-          title: 'Option 8'
+          title: 'Option 8',
         },
       },
       {
@@ -178,30 +178,30 @@ const routes: Array<RouteConfig> = [
         path: 'option9',
         props(route) {
           return {
-            Title: route.name
-          }
+            Title: route.name,
+          };
         },
         component: () => import('/@/layout/Title.vue'),
         meta: {
           title: 'Option 9',
           hiddenMenu: true,
-        }
+        },
       },
       {
         name: 'Option 10',
         path: 'option10',
         props(route) {
           return {
-            Title: route.name
-          }
+            Title: route.name,
+          };
         },
         component: () => import('/@/layout/Title.vue'),
         meta: {
-          title: 'Option 10'
-        }
-      }
-    ]
+          title: 'Option 10',
+        },
+      },
+    ],
   },
 ];
 
-export { routes }
+export { routes };

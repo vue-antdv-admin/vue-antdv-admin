@@ -16,17 +16,15 @@
  * @author zhushiqi
  */
 
-import { defineComponent, inject, ref } from 'vue';
+import { defineComponent, inject } from 'vue';
 import { MenuService } from '/@/services/Menu.service';
 import { ThemeService, ThemeServiceToken } from '/@/services/Theme.service';
 import SiderMenuItem from './SiderMenuItem.vue';
 
-interface IProps {}
-
 export default defineComponent({
   name: 'SiderMenu',
   components: { SiderMenuItem },
-  setup(props: IProps, ctx) {
+  setup() {
     const menuService = MenuService.getInstance();
     const themeService = inject(ThemeServiceToken) as ThemeService;
 

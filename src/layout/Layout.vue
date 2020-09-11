@@ -27,12 +27,10 @@
  * @author zhushiqi
  */
 
-import { defineComponent, ref } from 'vue';
+import { defineComponent } from 'vue';
 import { MenuService } from '/@/services/Menu.service';
 import SiderMenu from './SiderMenu.vue';
 import NavBar from './NavBar.vue';
-
-interface IProps {}
 
 export default defineComponent({
   name: 'Layout',

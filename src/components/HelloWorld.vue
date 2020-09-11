@@ -9,12 +9,13 @@
 
 <script>
 import { ref } from 'vue';
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String,
   },
-  setup(props, ctx) {
+  setup() {
     const count = ref(0);
     return { count };
   },

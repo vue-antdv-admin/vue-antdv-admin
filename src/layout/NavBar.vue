@@ -2,7 +2,7 @@
   <a-row type="flex"
     style="align-items: center;">
     <SiderTrigger :collapsed="collapsed"
-      @toggleClick="toggleCollapsed" />
+      @toggle-click="toggleCollapsed" />
     <a-breadcrumb style="margin: 16px 0"
       v-if="breadcrumb.length">
       <a-breadcrumb-item v-for="(breadcrumbItem, index) in breadcrumb"
@@ -24,11 +24,9 @@
  * @author zhushiqi
  */
 
-import { defineComponent, ref } from 'vue';
-import { MenuService } from '../services/Menu.service';
+import { defineComponent } from 'vue';
+import { MenuService } from '/@/services/Menu.service';
 import SiderTrigger from './SiderTrigger.vue';
-
-interface IProps {}
 
 export default defineComponent({
   name: 'NavBar',
@@ -37,12 +35,10 @@ export default defineComponent({
   },
   props: {},
   filters: {},
-  setup(props: IProps, ctx) {
+  setup() {
     const menuService = MenuService.getInstance();
-    console.log(menuService);
     return {
       ...menuService,
-      breadcrumb: menuService.breadcrumb,
     };
   },
 });

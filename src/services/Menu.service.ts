@@ -1,5 +1,14 @@
-import { Ref, ref, InjectionKey, watch, computed } from 'vue';
-import { useRoute, useRouter, RouteLocationMatched, RouteLocationNormalizedLoaded } from 'vue-router';
+import {
+  Ref,
+  ref,
+  InjectionKey,
+  watch,
+  computed,
+} from 'vue';
+import {
+  useRoute,
+  RouteLocationNormalizedLoaded,
+} from 'vue-router';
 import { RouteConfig } from '/@/typings/route';
 import { routes } from '/@/routes/index';
 import { Singleton } from '/@/utils/index';
@@ -12,17 +21,22 @@ interface Menu {
 
 @Singleton
 export class MenuService {
-
   static instance: MenuService;
+
   static getInstance: () => MenuService;
 
   menus!: Ref<Menu[]>;
+
   collapsed!: Ref<boolean>;
+
   openKeys!: Ref<string[]>;
+
   preOpenKeys!: Ref<string[]>;
+
   selectedKeys!: Ref<string[]>;
 
   breadcrumb: Ref<{ title: string; path: string }[]> = ref([]);
+
   route!: RouteLocationNormalizedLoaded;
 
   constructor() {
@@ -37,11 +51,11 @@ export class MenuService {
     this.selectedKeys = ref([this.findFirstMenu(this.menus.value).name]);
     watch(routeName, this.getBreadcrumb, {
       deep: true,
-      immediate: true
+      immediate: true,
     });
     watch(this.openKeys, (val, oldVal) => {
       this.preOpenKeys.value = oldVal;
-    })
+    });
   }
 
   getVisibilityRoutes(routes: RouteConfig[]): RouteConfig[] {
@@ -63,25 +77,23 @@ export class MenuService {
       title: route.meta.title,
       children: (!!route.children && !!route.children.length)
         ? route.children.map((item) => this.route2Menu(item as RouteConfig))
-        : []
-    }
+        : [],
+    };
   }
 
   findFirstMenu(menus: Menu[]): Menu {
     let menu: Menu = { name: '', title: '' };
     for (const { title, name, children } of menus) {
       if (children && children.length) {
-        return this.findFirstMenu(children)
-      } else {
-        menu = { title, name, children };
+        return this.findFirstMenu(children);
       }
+      menu = { title, name, children };
     }
     return menu;
   }
 
   getBreadcrumb = () => {
-    console.log('getBreadcrumb');
-    this.breadcrumb.value = this.route.matched.map((item => ({
+    this.breadcrumb.value = this.route.matched.map(((item) => ({
       title: item.meta.title,
       path: item.path,
     })));
@@ -95,7 +107,6 @@ export class MenuService {
     }
     this.openKeys.value = this.collapsed.value ? [] : this.preOpenKeys.value;
   }
-
 }
 
 export const MenuServiceToken: InjectionKey<MenuService> = Symbol('MenuService');

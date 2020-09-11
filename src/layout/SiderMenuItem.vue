@@ -24,7 +24,7 @@
  * @author zhushiqi
  */
 
-import { defineComponent, ref, PropType } from 'vue';
+import { defineComponent, PropType } from 'vue';
 
 interface Menu {
   title: string;
@@ -47,15 +47,13 @@ export default defineComponent({
   setup(props: IProps) {
     const isSubMenu = () => {
       return (
-        Array.isArray(props.menuItem.children) &&
-        !!props.menuItem.children.length
+        Array.isArray(props.menuItem.children)
+        && !!props.menuItem.children.length
       );
     };
-
     return {
       isSubMenu,
     };
   },
 });
 </script>
-

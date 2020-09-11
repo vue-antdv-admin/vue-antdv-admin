@@ -17,9 +17,7 @@
  * @author zhushiqi
  */
 
-import { defineComponent, ref } from 'vue';
-
-interface IProps {}
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'SiderTrigger',
@@ -32,13 +30,12 @@ export default defineComponent({
   setup(props, ctx) {
     return {
       toggleClick() {
-        ctx.emit('toggleClick');
+        ctx.emit('toggle-click');
       },
     };
   },
 });
 </script>
-
 
 <style lang="scss" scoped>
 .sider-trigger {

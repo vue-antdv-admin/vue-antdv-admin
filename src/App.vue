@@ -9,14 +9,12 @@
  * @author zhushiqi
  */
 
-import { defineComponent, provide, ref } from 'vue';
+import { defineComponent, provide } from 'vue';
 import { ThemeService, ThemeServiceToken } from '/@/services/Theme.service';
-
-interface IProps {}
 
 export default defineComponent({
   name: 'App',
-  setup(props: IProps, ctx) {
+  setup() {
     const themeService = ThemeService.getInstance();
     provide(ThemeServiceToken, themeService);
   },
