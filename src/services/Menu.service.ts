@@ -58,6 +58,7 @@ export class MenuService {
     });
   }
 
+  // eslint-disable-next-line no-shadow
   getVisibilityRoutes(routes: RouteConfig[]): RouteConfig[] {
     return routes.filter((route) => {
       const { meta: { hiddenMenu }, children } = route;
@@ -65,6 +66,7 @@ export class MenuService {
         return false;
       }
       if (children && children.length) {
+        // eslint-disable-next-line no-param-reassign
         route.children = this.getVisibilityRoutes(children);
       }
       return true;
